@@ -1,0 +1,22 @@
+https://www.kaggle.com/code/pranjalverma08/exploring-bangalore-restaurants
+
+To achieve this in Power BI, follow these steps:
+
+1. **Import the CSV File:**
+   - Open Power BI Desktop.
+   - Click on `Get Data` > `Text/CSV`, then select your `banglore_zomato.csv` file and load it.
+
+2. **Create a Map Visualization:**
+   - Drag the fields related to location (such as latitude and longitude or address) onto the canvas.
+   - Choose the `Map` visualization type. Power BI will plot the locations on a map.
+
+3. **Add a Slicer for Shop Name:**
+   - Drag the `Shop Name` field into the slicer visual.
+   - This will create a slicer that allows users to filter the map based on the shop name.
+
+4. **Display Phone Number Based on Selected Shop Name:**
+   - Create a card visual or table visual on the report canvas.
+   - Drag the `Phone Number` field to this visual.
+   - When a user selects a shop name in the slicer, the corresponding phone number will be displayed.
+
+This setup will allow you to interactively select a shop name and see its phone number while visualizing the location on the map.
