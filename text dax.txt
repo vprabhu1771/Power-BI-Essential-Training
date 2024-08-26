@@ -1,0 +1,5 @@
+Full Name = CONCATENATE("selva", "ganapathy")
+
+First Initial = LEFT("prabhu", 1)
+
+Name Length = LEN("Prabhu")

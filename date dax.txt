@@ -1,0 +1,12 @@
+Today's Date = TODAY()
+
+Today's Date = Day(TODAY())
+
+Today's Date = Month(TODAY())
+
+Today's Date = Year(TODAY())
+
+Last Two Digits of Year = RIGHT(TODAY(), 2)
+
+
+Days Between Orders = DATEDIFF(21-08-2024, 26-08-2024, DAY)
