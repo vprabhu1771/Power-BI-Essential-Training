@@ -1,0 +1,4 @@
+EVALUATE
+SUMMARIZECOLUMNS(    
+    "Employees Count", COUNT('Employees'[Column1])
+)

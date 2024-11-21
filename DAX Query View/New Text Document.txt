@@ -1,0 +1,16 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+	Employees[Column1]
+)
+
+
+EVALUATE
+SUMMARIZECOLUMNS(
+	Employees[Column2]
+)
+
+EVALUATE
+ADDCOLUMNS(
+    Employees,
+    "FullName", Employees[Column1] & " " & Employees[Column2]
+)
