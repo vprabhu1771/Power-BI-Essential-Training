@@ -1,13 +1,17 @@
+```
 EVALUATE 
 VAR Yesterday = TODAY() - 1
 RETURN ROW("Yesterday", Yesterday)
+```
 
+```
 EVALUATE
 VAR TODAY = TODAY()
 RETURN ROW("TODAY",TODAY)
+```
 
+```
 EVALUATE
 VAR TOMMOROW = TODAY()
 RETURN ROW("TOMMOROW",TOMMOROW)
-
-
+```
