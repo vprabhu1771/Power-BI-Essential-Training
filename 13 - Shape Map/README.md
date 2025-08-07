@@ -2,6 +2,10 @@
 https://www.youtube.com/watch?v=Ww-dPofQuNI
 ```
 
+```
+https://www.youtube.com/watch?v=Ik81NIUfWNs
+```
+
 ```sql
 CREATE TABLE `country`(
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
