@@ -12,7 +12,7 @@ CREATE TABLE `country`(
   `name` VARCHAR(255)
 );
 
-INSERT INTO `country` (`name`) VALUES ("India", "America", "Russia", "China");
+INSERT INTO `country` (`name`) VALUES ("India"), ("America"), ("Russia"), ("China");
 ```
 
 # Power BI
