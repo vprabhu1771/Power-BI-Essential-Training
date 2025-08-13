@@ -11,10 +11,10 @@ Here’s exactly what you’d do in **Power BI** with your `constituencywise_res
 Go to **Modeling → New Column** and paste this:
 
 ```DAX
-Alliance =
+Alliance = 
 SWITCH(
     TRUE(),
-    'constituencywise_results'[Party] IN {
+    'constituencywise_details'[Party] IN {
         "Bharatiya Janata Party",
         "Shiv Sena - SHS",
         "Janata Dal (United) - JD(U)",
@@ -27,7 +27,7 @@ SWITCH(
         "Asom Gana Parishad - AGP",
         "Sikkim Krantikari Morcha - SKM"
     }, "NDA",
-    'constituencywise_results'[Party] IN {
+    'constituencywise_details'[Party] IN {
         "Indian National Congress",
         "Dravida Munnetra Kazhagam - DMK",
         "Aam Aadmi Party - AAAP",
