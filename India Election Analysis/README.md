@@ -78,21 +78,13 @@ EVALUATE
 **NDA Seats**
 
 ```DAX
-NDA Seats =
-CALCULATE(
-    COUNTROWS('constituencywise_results'),
-    'constituencywise_results'[Alliance] = "NDA"
-)
+NDA Seats = CALCULATE([Total Seats], partywise_results[Party Alliance] = "NDA")
 ```
 
 **I.N.D.I.A Seats**
 
 ```DAX
-INDIA Seats =
-CALCULATE(
-    COUNTROWS('constituencywise_results'),
-    'constituencywise_results'[Alliance] = "I.N.D.I.A"
-)
+INDIA Seats = CALCULATE([Total Seats], partywise_results[Party Alliance] = "I.N.D.I.A")
 ```
 
 **NDA Percentage**
