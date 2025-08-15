@@ -11,38 +11,47 @@ Here’s exactly what you’d do in **Power BI** with your `constituencywise_res
 Go to **Modeling → New Column** and paste this:
 
 ```DAX
-Alliance = 
-SWITCH(
-    TRUE(),
-    'constituencywise_details'[Party] IN {
-        "Bharatiya Janata Party",
-        "Shiv Sena - SHS",
-        "Janata Dal (United) - JD(U)",
-        "Lok Janshakti Party (Ram Vilas) - LJPRV",
-        "Ajsu Party - AJSUP",
-        "Apna Dal (Soneylal) - ADAL",
-        "Nationalist Congress Party - NCP",
-        "Rashtriya Lok Janshakti Party - RLJP",
-        "United People's Party, Liberal - UPPL",
-        "Asom Gana Parishad - AGP",
-        "Sikkim Krantikari Morcha - SKM"
-    }, "NDA",
-    'constituencywise_details'[Party] IN {
-        "Indian National Congress",
-        "Dravida Munnetra Kazhagam - DMK",
-        "Aam Aadmi Party - AAAP",
-        "All India Trinamool Congress - AITC",
-        "Communist Party of India  (Marxist) - CPI(M)",
-        "Communist Party of India - CPI",
-        "Samajwadi Party - SP",
-        "Shiv Sena (Uddhav Balasaheb Thackrey) - SHSUBT",
-        "Rashtriya Janata Dal - RJD",
-        "Nationalist Congress Party – Sharadchandra Pawar - NCPSP",
-        "Jammu & Kashmir National Conference - JKN",
-        "Jharkhand Mukti Morcha - JMM",
-        "Rashtriya Lok Dal - RLD"
-    }, "I.N.D.I.A",
-    "Other"
+Party Alliance = 
+IF(
+    partywise_results[Party] = "Bharatiya Janata Party - BJP" ||
+    partywise_results[Party] = "Telugu Desam - TDP" ||
+    partywise_results[Party] = "Janata Dal  (United) - JD(U)" ||
+    partywise_results[Party] = "Shiv Sena - SHS" ||
+    partywise_results[Party] = "AJSU Party - AJSUP" ||
+   partywise_results[Party] = "Apna Dal (Soneylal) - ADAL" ||
+    partywise_results[Party] = "Asom Gana Parishad - AGP" ||
+    partywise_results[Party] = "Hindustani Awam Morcha (Secular) - HAMS" ||
+    partywise_results[Party] = "Janasena Party - JnP" ||
+    partywise_results[Party] = "Janata Dal  (Secular) - JD(S)" ||
+    partywise_results[Party] = "Lok Janshakti Party(Ram Vilas) - LJPRV" ||
+    partywise_results[Party] = "Nationalist Congress Party - NCP" ||
+    partywise_results[Party]= "Rashtriya Lok Dal - RLD" ||
+    partywise_results[Party] = "Sikkim Krantikari Morcha - SKM",
+    "NDA",
+    IF(
+        partywise_results[Party] = "Indian National Congress - INC" ||
+        partywise_results[Party] = "Aam Aadmi Party - AAAP" ||
+        partywise_results[Party] = "All India Trinamool Congress - AITC" ||
+        partywise_results[Party] = "Bharat Adivasi Party - BHRTADVSIP" ||
+        partywise_results[Party]= "Communist Party of India  (Marxist) - CPI(M)" ||
+        partywise_results[Party] = "Communist Party of India  (Marxist-Leninist)  (Liberation) - CPI(ML)(L)" ||
+        partywise_results[Party] = "Communist Party of India - CPI" ||
+        partywise_results[Party] = "Dravida Munnetra Kazhagam - DMK" ||
+        partywise_results[Party] = "Indian Union Muslim League - IUML" ||
+        partywise_results[Party] = "Jammu & Kashmir National Conference - JKN" ||
+        partywise_results[Party] = "Jharkhand Mukti Morcha - JMM" ||
+        partywise_results[Party] = "Kerala Congress - KEC" ||
+        partywise_results[Party] = "Marumalarchi Dravida Munnetra Kazhagam - MDMK" ||
+        partywise_results[Party] = "Nationalist Congress Party Sharadchandra Pawar - NCPSP" ||
+        partywise_results[Party] = "Rashtriya Janata Dal - RJD" ||
+        partywise_results[Party] = "Rashtriya Loktantrik Party - RLTP" ||
+        partywise_results[Party] = "Revolutionary Socialist Party - RSP" ||
+        partywise_results[Party] = "Samajwadi Party - SP" ||
+        partywise_results[Party] = "Shiv Sena (Uddhav Balasaheb Thackrey) - SHSUBT" ||
+        partywise_results[Party] = "Viduthalai Chiruthaigal Katchi - VCK",
+        "I.N.D.I.A.",
+        "OTHER"
+    )
 )
 ```
 
@@ -55,6 +64,10 @@ SWITCH(
 ```DAX
 Total Seats =
 COUNTROWS('constituencywise_results')
+```
+
+```
+Total Seats = SUM(partywise_results[Won])
 ```
 
 ```
