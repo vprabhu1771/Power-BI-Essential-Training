@@ -87,6 +87,12 @@ NDA Seats = CALCULATE([Total Seats], partywise_results[Party Alliance] = "NDA")
 INDIA Seats = CALCULATE([Total Seats], partywise_results[Party Alliance] = "I.N.D.I.A")
 ```
 
+**OTHERS Seats**
+
+```DAX
+OTHERS Seats = CALCULATE([Total Seats], partywise_results[Party Alliance] = "OTHERS")
+```
+
 **NDA Percentage**
 
 ```DAX
@@ -99,6 +105,13 @@ DIVIDE([NDA Seats], [Total Seats], 0)
 ```DAX
 INDIA % =
 DIVIDE([INDIA Seats], [Total Seats], 0)
+```
+
+**OTHERS Percentage**
+
+```DAX
+OTHERS % =
+DIVIDE([OTHERS Seats], [Total Seats], 0)
 ```
 
 ---
