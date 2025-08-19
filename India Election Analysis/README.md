@@ -1,5 +1,19 @@
 # India Election Analysis 
 
+Overview Analysis
+
+INDIA GENERAL ELECTION RESULTS - 2024
+
+OVERVIEW ANALYSIS
+
+Voting Dates - Fri, 19 Apr to Sat, 01 Jun 2024
+
+Counting Date (Result Date) - Tue, 04 Jun 2024
+
+
+NDA Alliance
+
+
 Right — there’s no **Alliance** column in your CSV, so we’ll have to **create it first** in Power BI as a **calculated column** before we can make the seat count and percentage measures.
 
 Here’s exactly what you’d do in **Power BI** with your `constituencywise_results` table (since it already contains one row per winning candidate, it’s cleaner than `constituencywise_details`).
@@ -114,6 +128,27 @@ OTHERS % =
 DIVIDE([OTHERS Seats], [Total Seats], 0)
 ```
 
+```DAX
+Party Short = 
+TRIM(
+	MID(
+		partywise_results[Party],
+		FIND(" - ", partywise_results[Party], 1) + 3,
+		LEN(partywise_results[Party])
+	)
+)
+```
+
+```DAX
+Party Short = 
+TRIM(
+	MID(
+		partywise_results[Party],
+		FIND(" - ", partywise_results[Party], 1) + 3,
+		LEN(partywise_results[Party])
+	)
+)
+```
 ---
 
 If we use this method with `constituencywise_results`,
