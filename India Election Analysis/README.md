@@ -156,3 +156,11 @@ If we use this method with `constituencywise_results`,
 ✅ It works directly with winners.
 
 Do you want me to **add all your CSV’s NDA/I.N.D.I.A party names** into that DAX list so it exactly matches your data? That way you can paste it and get 100% correct results.
+
+
+
+# State Demographics Analysis
+
+```
+NDA Seats = CALCULATE(COUNT(constituencywise_results[Constituency Name]), partywise_results[Party Alliance] = "NDA")
+```
